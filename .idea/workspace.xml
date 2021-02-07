@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6ac7e3f9-73ac-4ed9-8c34-8eb9813bf78f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="4" />
+    <option name="OUTPUT_DIRECTORY" value="D:\DB\DB_HW3" />
+  </component>
+  <component name="ProjectId" id="1lZS2aIPf8LPpjPCS5ADnwEWeKx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DBE.Init.BalloonShown" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="D:/DB/finalProject" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DB\finalProject" />
+      <recent name="D:\DB\DB_HW3" />
+    </key>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="191" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612703120045">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="191" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1612703120045" />
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1612107819664">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1612107819664" />
+    <state width="845" height="232" key="GridCell.Tab.0.bottom" timestamp="1612720956805">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="845" height="232" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1612720956805" />
+    <state width="845" height="232" key="GridCell.Tab.0.center" timestamp="1612720956804">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="845" height="232" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1612720956804" />
+    <state width="845" height="232" key="GridCell.Tab.0.left" timestamp="1612720956804">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="845" height="232" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1612720956804" />
+    <state width="845" height="232" key="GridCell.Tab.0.right" timestamp="1612720956805">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="845" height="232" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1612720956805" />
+    <state x="142" y="6" key="SettingsEditor" timestamp="1612721367816">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="142" y="6" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1612721367816" />
+    <state x="540" y="238" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1607803183944">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="540" y="238" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1280.720@0.0.1280.720" timestamp="1607803183944" />
+    <state x="523" y="248" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1612720099308">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="523" y="248" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1280.720@0.0.1280.720" timestamp="1612720099308" />
+    <state x="438" y="181" width="404" height="354" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1612718893221">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="438" y="181" width="404" height="354" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1280.720@0.0.1280.720" timestamp="1612718893221" />
+    <state x="151" y="0" key="com.intellij.database.view.ui.DatabasePreviewDialog" timestamp="1612721071986">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="151" y="0" key="com.intellij.database.view.ui.DatabasePreviewDialog/0.0.1280.720@0.0.1280.720" timestamp="1612721071986" />
+  </component>
+</project>
