@@ -15,6 +15,14 @@ values ('leixi' , MD5('leir79onboard'), '2017-6-10', 'leia' , 'rostami' ,'091289
 insert into user(username, password, activationdate, firstname, lastname, phonenumber, address, user_type_id, withdrawal)
 values ('theMan', MD5('imboss567'), '2010-1-1', 'maryam' , 'kiani' ,'09123883416','elahie street', 1 , 500000);
 
+
+insert into user(username, password, activationdate, firstname, lastname, phonenumber, address, user_type_id, withdrawal)
+values ('mSodeifi', MD5('mahdisod72'), '2021-2-10', 'mahdi' , 'sodeifi','09129991534','emam khomeini street', 5 , 5000 );
+
+
+insert into user(username, password, activationdate, firstname, lastname, phonenumber, address, user_type_id, withdrawal)
+values ('LilianFench', MD5('imlili1010'), '2021-2-10', 'lilian' , 'sodeifi','09342552667','zaferanie street', 5 , 6000 );
+
 #amirdashti  amirm1999
 
 insert into book (bookID, Volume, Title, bookCategoryID, NumberOfPages, Price, Author, edition, publish_date, PublisherName, stock)
@@ -108,4 +116,3 @@ values (5 , 'Ordinary');
 
 insert into loginbox(userName, logs, late_return, log_date)
 values ('Leiso' , 'blablabla' , false , '2021-02-12');
-
