@@ -14,7 +14,6 @@ create table if not exists user (
     tag varchar(100),
     ban_date date,
     foreign key (user_type_id) references userType (user_type_id)
-#     CONSTRAINT CHECK (password like '%[0-9]%' AND (password like '%[a-z]%' or password like '%[A-Z]%'))
 );
 
 
