@@ -142,6 +142,7 @@ begin
 end;
 
 
+
 create procedure user_personal_data(
     in p_tag varchar(100)
 )
@@ -153,6 +154,9 @@ begin
     end if;
 
 end;
+
+
+
 
 create procedure sign_out(
  in p_tag varchar(100)
@@ -338,23 +342,43 @@ begin
 end;
 
 
+create procedure show_user_results(
+    in pageNumber int,
+    in inp_userName varchar(20),
+    in inp_LastName varchar(50)
+)
+begin
+    declare lim int;
+    declare off int;
+    set lim = 5;
+    set off = (lim * pageNumber) - lim;
+    select ID , userName ,activationDate , FirstName, LastName,PhoneNumber , Address ,user_type,Withdrawal
+    from user join usertype u on user.user_type_id = u.user_type_id
+    where userName is null or userName = inp_userName or LastName is null or LastName = inp_LastName order by FirstName
+    limit lim offset off;
+end;
+
+
 
 CREATE procedure search_user(
     in p_tag varchar(100),
     in inp_userName varchar(20),
     in inp_LastName varchar(50),
-    in inp_limit int,
-    in inp_offset int,
+    out number_of_page_result int ,
     out error_message varchar(300)
 )
 begin
+
     select userName,user_type_id into @user , @id from user where p_tag = tag;
     if @user is not null then
         if @id = 1 or @id = 2 then
-            select ID , userName ,activationDate , FirstName, LastName,PhoneNumber , Address ,user_type,Withdrawal
-            from user join usertype u on user.user_type_id = u.user_type_id
-            where userName is null or userName = inp_userName or LastName is null or LastName = inp_LastName order by FirstName
-            limit inp_limit offset inp_offset;
+            SELECT count(*) into @numofpage FROM user join usertype u on user.user_type_id = u.user_type_id
+             where userName is null or userName = inp_userName or LastName is null or LastName = inp_LastName order by FirstName;
+             if @numofpage mod 5 != 0 then
+                SELECT (@numofpage div 5) + 1 into number_of_page_result;
+             else
+                SELECT @numofpage div 5 into number_of_page_result;
+             end if;
         else
             set error_message = 'you do not have access to this field';
             rollback ;
@@ -367,17 +391,21 @@ end;
 
 create procedure admins_get_successful_barrow_req(
     in p_tag varchar(100),
-    in inp_limit int,
-    in inp_offset int,
+    out number_of_page_result int ,
     out error_message varchar(300)
 )
 begin
     select userName,user_type_id into @user , @id from user where p_tag = tag;
     if @user is not null then
         if @id = 1 or @id = 2 then
-            select userName , logs from loginbox natural join barrowstatus
-            where ReceivedDate is not null and ReturnDate is null order by log_date desc
-            limit inp_limit offset inp_offset;
+            SELECT count(*) into @numofpage from loginbox natural join barrowstatus
+            where ReceivedDate is not null and ReturnDate is null;
+            if @numofpage mod 5 != 0 then
+                SELECT (@numofpage div 5) + 1 into number_of_page_result;
+            else
+                SELECT @numofpage div 5 into number_of_page_result;
+            end if;
+
         else
             set error_message = 'you do not have access to this field';
             rollback ;
@@ -387,6 +415,24 @@ begin
         rollback;
     end if;
 end;
+
+create procedure show_req_result(
+    in pageNumber int
+)
+begin
+    declare lim int;
+    declare off int;
+    set lim = 5;
+    set off = (lim * pageNumber) - lim;
+    select userName , logs from loginbox natural join barrowstatus
+    where ReceivedDate is not null and ReturnDate is null order by log_date desc
+    limit lim offset off;
+end;
+
+
+
+
+
 
 create procedure search_late_return_books(
     in p_tag varchar(100),
