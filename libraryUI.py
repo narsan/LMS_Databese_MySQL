@@ -167,6 +167,7 @@ def user_accessibility(tag):
             out = my_cursor.callproc('add_book' , (tag ,book_volume , book_title , book_category , book_num_of_page , book_price , book_author , book_edition , book_publish_date , book_publisher_name , output_message))
             print(out[10])
         if (user_id == 1 or user_id == 2) and choice == '8':
+            number = ''
             print('please fill any of the field below that you want to search on leave the others empty')
 
             user_name = input('Username>> ')
@@ -175,13 +176,20 @@ def user_accessibility(tag):
                 user_name = None
             if user_last_name == '':
                 user_last_name = None
-            out = my_cursor.callproc('search_user', (tag , user_name, user_last_name , 5 , 0, output_message))
-            for result in my_cursor.stored_results():
-                a = result.fetchall()
-                print(tabulate(a, headers=['ID', 'Username', 'ActivationDate', 'FirstName', 'LastName', 'PhoneNumber', 'Address', 'UserType', 'Withdrawal'], tablefmt='psql'))
-                print('\n')
-            if out[5] is not None:
-                print(out[5])
+            out = my_cursor.callproc('search_user', (tag , user_name, user_last_name , number , output_message))
+            while True :
+                print(f'{out[3]} page results')
+                print('choose the page result you want to see type "back" to turn back to the main menu ')
+                page_res = input()
+                if page_res == 'back':
+                    break
+                my_cursor.callproc('show_results', (page_res, user_name, user_last_name))
+                for result in my_cursor.stored_results():
+                    a = result.fetchall()
+                    print(tabulate(a, headers=['ID', 'Username', 'ActivationDate', 'FirstName', 'LastName', 'PhoneNumber', 'Address', 'UserType', 'Withdrawal'], tablefmt='psql'))
+                    print('\n')
+                if out[2] is not None:
+                    print(out[2])
 
         if (user_id == 1 or user_id == 2) and choice == '9':
             print('please enter a username you want to see its activity')
@@ -195,13 +203,21 @@ def user_accessibility(tag):
                 print(out[2])
 
         if (user_id == 1 or user_id == 2) and choice == '10':
-            out = my_cursor.callproc('admins_get_successful_barrow_req', (tag, 5, 0, output_message))
-            for result in my_cursor.stored_results():
-                a = result.fetchall()
-                print(tabulate(a, headers=['Username', 'Log'], tablefmt='psql'))
-                print('\n')
-            if out[3] is not None:
-                print(out[3])
+            number = ''
+            out = my_cursor.callproc('admins_get_successful_barrow_req', (tag, number , output_message))
+            while True:
+                print(f'{out[1]} page results')
+                print('choose the page result you want to see type "back" to turn back to the main menu ')
+                page_res = input()
+                if page_res == 'back':
+                    break
+                my_cursor.callproc('show_req_result', (page_res,))
+                for result in my_cursor.stored_results():
+                    a = result.fetchall()
+                    print(tabulate(a, headers=['Username', 'Log'], tablefmt='psql'))
+                    print('\n')
+                if out[2] is not None:
+                    print(out[2])
 
         if (user_id == 1 or user_id == 2) and choice == '11':
             out = my_cursor.callproc('search_late_return_books', (tag, output_message))
@@ -234,10 +250,5 @@ userTag = user_login()
 user_accessibility(userTag)
 
 
-# err =''
 
-# 'Brondon Mull'
-
-# insert = my_cursor.callproc('create_account', (username, enter_pass, datetime.today().strftime('%Y/%m/%d'), first_name, last_name, phone_number, address,customer_type, output_message))
-# output_message = ''
 
